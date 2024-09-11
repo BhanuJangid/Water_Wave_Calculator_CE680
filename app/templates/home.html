@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Bootstrap CDN for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts for custom typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS for animation and style -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Style */
+        .navbar {
+            background-color: transparent;
+        }
+        .navbar .nav-link {
+            color: white !important;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .navbar .nav-link:hover {
+            color: #ffe600 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            animation: fadeInDown 2s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: fadeInUp 2s ease;
+        }
+
+        .hero button {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            background-color: #ffe600;
+            color: #333;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #ffdd00;
+            transform: translateY(-5px);
+        }
+
+        /* Floating Elements */
+        .floating-icon {
+            position: absolute;
+            width: 150px;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .floating-1 {
+            top: 20%;
+            left: 10%;
+        }
+
+        .floating-2 {
+            top: 50%;
+            right: 10%;
+        }
+
+        .floating-3 {
+            bottom: 10%;
+            left: 30%;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #333;
+            text-align: center;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" style="color:white; font-weight:600;">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/wavelength">Wavelength Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/depth">Depth Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vis">Dynamic Parameters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/trans">Wave Transformation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Wave Parameter Calculator</h1>
+        <p>Your one-stop solution for advanced wave analysis and visualizations</p>
+        <button onclick="window.location.href='/wavelength'">Start Now</button>
+    </div>
+
+    <!-- Floating Icons -->
+    <img src="{{ url_for('static', filename='sait-boat.svg') }}" class="floating-icon floating-1" alt="Wave Emoji">
+    <img src="{{ url_for('static', filename='m0qqp5yvre2py0gjdhbeynltdvcz.png') }}" class="floating-icon floating-2" alt="Submarine Emoji">
+    <!-- <img src="{{ url_for('static', filename='water-wave-emoji-2044x2048-f58fjsqv.png') }}" class="floating-icon floating-3" alt="Torch Emoji"> -->
+    
+   
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
